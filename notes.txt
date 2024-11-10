@@ -1,0 +1,12 @@
+- add number of logins (also maybe names or ips or something)
+- add two types
+1st realtime- no database (10 minutes afterwards to database and can share link and code will be intact)
+for now it will be first need to send url 
+
+2nd 
+- un real time
+- when going to url with uuid check if id exist and push when creating to backend or for now localhost
+- will only be updated when saved
+- can have different expiry time
+- when you click update it will check if there have been any changes which are not on yours like before pushing taking a pull
+- border current user
