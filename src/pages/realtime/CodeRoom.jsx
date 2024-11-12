@@ -5,7 +5,9 @@ import Editor from "@monaco-editor/react";
 import { CircleCheck, Copy } from "lucide-react";
 import Avatar from "react-avatar";
 
-const WebSocketURL = "wss://collabcode-backend-production.up.railway.app";
+const WebSocketURL = import.meta.env.PROD
+  ? "wss://collabcode-backend-production.up.railway.app"
+  : "ws://localhost:3000";
 
 const CodeRoom = () => {
   const { id: sessionId } = useParams(); // Extract search params from URL
@@ -39,26 +41,18 @@ const CodeRoom = () => {
       const { content: newContent } = JSON.parse(event.data);
       setContent(newContent); // Update content when message is received
     };
-
-    return () => {
-      socket.close(); // Cleanup WebSocket connection on unmount
-    };
   }, []);
 
   const handleChange = (e) => {
-    console.log(e);
     setContent(e);
 
     // Broadcast the content to other users in the same session
     if (socketRef.current && socketRef.current.readyState === WebSocket.OPEN) {
-      socketRef.current.send(
-        JSON.stringify({ sessionId, content: newContent })
-      );
+      socketRef.current.send(JSON.stringify({ sessionId, content: e }));
     }
   };
 
   const handleLangChange = (e) => {
-    console.log(e);
     setLanguage(e.target.value);
   };
 
