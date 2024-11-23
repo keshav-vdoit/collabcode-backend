@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 197 89% 45%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 199 76% 92%;
+    --secondary-foreground: 215 25% 27%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --success: 161 94% 30%;
+    --success-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 213 27% 84%;
+    --input: 214.3 20% 65%;
+    --ring: 197 89% 45%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 198 100% 39%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 199 76% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --success: 161 94% 30%;
+    --success-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 215 19% 35%;
+    --ring: 197 89% 45%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-lg;
+  }
+
+  html {
+    overflow-x: hidden !important;
+    scrollbar-gutter: stable;
+    width: 100%;
+  }
+
+  body,
+  #root {
+    @apply bg-background text-foreground leading-normal overflow-x-hidden min-h-screen flex flex-col !min-w-full;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  p {
+    @apply text-muted-foreground;
+  }
+
+  h1,
+  .h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2,
+  .h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3,
+  .h3 {
+    @apply text-[20px] font-semibold;
+  }
+
+  h4,
+  .h4 {
+    @apply text-lg font-semibold;
+  }
+
+  h5,
+  .h5 {
+    @apply text-base font-semibold;
+  }
+
+  h6,
+  .h6 {
+    @apply text-base font-semibold;
+  }
+
+  hr {
+    @apply border-muted;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition:
+      background-color 600000s 0s,
+      color 600000s 0s;
+  }
+
+  input[data-autocompleted] {
+    background-color: transparent !important;
+  }
+
+  /* .loader {
+    width: 120px;
+    height: 120px;
+    border: 11px dotted;
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+    @apply border-foreground;
+  } */
+
+  /* .loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 8px dotted;
+    border-style: solid solid dotted;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    animation: rotationBack 1s linear infinite;
+    transform-origin: center center;
+    @apply border-primary;
+  } */
+
+  /* @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  } */
+
+  /* @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(-360deg);
+    }
+  } */
+  .loader {
+    width: 28px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: hsl(var(--secondary));
+    box-shadow: 0 0 0 0 hsl(var(--primary));
+    animation: l1 1s infinite;
+  }
+
+  @keyframes l1 {
+    100% {
+      box-shadow: 0 0 0 30px hsl(var(--secondary));
+    }
+  }
+
+  /* Overlay to darken background image */
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent dark overlay */
+    z-index: -1;
+  }
+
+  /* Text shadow to improve readability */
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+}
