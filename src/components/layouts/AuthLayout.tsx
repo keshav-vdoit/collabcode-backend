@@ -6,12 +6,12 @@ import { Outlet } from "react-router-dom";
 // import { Logo } from '../shared/Logo';
 import Footer from "../template/Footer";
 import PageLoader from "../template/PageLoader";
-import Navbar from "../template/Navbar";
+import Navbar from "../template/navbar/Navbar";
 
 const AuthLayout = () => {
   return (
     <Suspense>
-      <div className="flex flex-auto flex-col justify-between min-h-screen">
+      <div className="flex flex-auto flex-col justify-between min-h-screen font-urbanist bg-white">
         {/* <main className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 px-4 sm:px-6 md:px-8 py-4 sm:py-6"> */}
         <Navbar />
         <main>
@@ -19,7 +19,7 @@ const AuthLayout = () => {
             {/* <div className="flex flex-col justify-center gap-4 md:gap-8 items-center relative"> */}
             <div>
               {/* <Logo className="lg:absolute top-0 right-0 w-28" /> */}
-              <div className="flex flex-col w-full">
+              <div className="flex flex-col w-full px-10">
                 <Outlet />
               </div>
             </div>

@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Footer from '../template/Footer';
-import Navbar  from '../template/Navbar';
+import Navbar  from '../template/navbar/Navbar';
 import PageLoader from '../template/PageLoader';
 
 const UserLayout = () => {
