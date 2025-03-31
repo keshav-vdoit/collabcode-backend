@@ -1,0 +1,8 @@
+- challenge of how to handle new connection, had to send message first for other users to receive , tackled by searching and add id on connection itself
+
+todo
+when new user connect , send to all users updated users
+
+when reload a new user is added , stop that also -> add /sessionId/userId in url
+
+when new user opens send the content to them, related to user one above
