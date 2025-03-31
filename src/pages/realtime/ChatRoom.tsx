@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 const ChatRoom = () => {
-  const [messages, setMessages] = useState([]);
+  // const [messages, setMessages] = useState([]);
   const currMess = {
     message:
       "That's awesome. I think our users will really appreciate the improvements.",

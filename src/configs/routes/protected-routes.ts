@@ -1,4 +1,4 @@
-import { lazy } from "react";
+// import { lazy } from "react";
 
 export interface ProtectedRouteInterface {
   path: string;
@@ -7,11 +7,11 @@ export interface ProtectedRouteInterface {
 }
 
 export const protectedRoutes: ProtectedRouteInterface[] = [
-  {
-    path: "/cart",
-    name: "Cart",
-    component: lazy(() => import("@/pages/user/Cart")),
-  },
+  // {
+  //   path: "/cart",
+  //   name: "Cart",
+  //   component: lazy(() => import("@/pages/user/Cart")),
+  // },
   // {
   //   path: '/chat/:twinName',
   //   name: 'Twin Chat',

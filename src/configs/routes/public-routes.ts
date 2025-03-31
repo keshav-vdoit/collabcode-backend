@@ -8,11 +8,11 @@ export const publicRoutes = [
     name: "Sign In",
     component: lazy(() => import("@/pages/auth/SignIn")),
   },
-  {
-    path: PATHS.LANDING,
-    name: "COLLAB CODE IMPROVE",
-    component: lazy(() => import("@/pages/landingPage/LandingPage")),
-  },
+  // {
+  //   path: PATHS.LANDING,
+  //   name: "COLLAB CODE IMPROVE",
+  //   component: lazy(() => import("@/pages/landingPage/LandingPage")),
+  // },
   // {
   //   path: PATHS.REGISTER,
   //   name: 'Register',

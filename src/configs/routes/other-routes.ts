@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+// import { lazy } from 'react';
 
 export interface OtherRoutes {
   path: string;
@@ -7,11 +7,11 @@ export interface OtherRoutes {
 }
 
 export const otherRoutes: OtherRoutes[] = [
-  {
-    path: '/payment',
-    name: 'Payment',
-    component: lazy(() => import('@/pages/others/Payment')),
-  },
+  // {
+  //   path: '/payment',
+  //   name: 'Payment',
+  //   component: lazy(() => import('@/pages/others/Payment')),
+  // },
   // {
   //   path: '/verify',
   //   name: 'Verify',
