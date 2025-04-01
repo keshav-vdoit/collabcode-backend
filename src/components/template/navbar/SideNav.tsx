@@ -6,7 +6,7 @@ const SideNav = () => {
   const newSessionId = uuidv4().slice(0, 6);
 
   return (
-    <div className="w-56 bg-secondary h-screen">
+    <div className="w-56 bg-secondary h-screen hidden md:block">
       <ul className="">
         <Link to={"/"}>
           <li className="hover:bg-primary border-primary flex items-center gap-2 p-3 py-2 rounded text-white border-b">

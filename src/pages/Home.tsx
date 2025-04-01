@@ -13,7 +13,7 @@ export default function Home() {
         description="Home | CodeColab : Collaborative Editor , Code Colab Share"
       />
       <div className="">
-        <p className="text-[3rem] font-bold colored-text">
+        <p className="text-3xl md:text-[3rem] font-bold colored-text">
           Code Colab : Collaborative Editor
         </p>
         <h4 className="my-3 text-text-1">
@@ -42,7 +42,7 @@ export default function Home() {
           </p>}
         </div> */}
 
-      <div className="flex items-center justify-evenly my-10">
+      <div className="flex flex-col md:flex-row items-center justify-evenly my-10 gap-5 md:gap-0">
         <Link to={`/realtime/${newSessionId}`}>
           <div className="p-8 py-4 rounded bg-gradient-to-tr from-primary via-blue-300 to-blue-300 hover:bg-secondary font-semibold text-white cursor-pointer hover:-translate-y-1 duration-500 transition-all shadow-2xl">
             <Radio

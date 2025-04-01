@@ -17,12 +17,12 @@ const CodeRoom = () => {
   const [activeUsers, setActiveUsers] = useState([]);
   // check if its production or development
   const url = import.meta.env.PROD
-    ? "https://colabcode.netlify.app"
+    ? "https://colabcode.netlify.app" + useLocation().pathname
     : "http://localhost:5173" + useLocation().pathname;
 
   const [content, setContent] = useState("");
   const [language, setLanguage] = useState("javascript");
-  const [copyButtonText, setCopyButtonText] = useState("Copy Code");
+  const [copyButtonText, setCopyButtonText] = useState("Copy Url");
   const socketRef = useRef(null); // Store WebSocket connection
 
   useEffect(() => {
@@ -133,9 +133,9 @@ const CodeRoom = () => {
                 ))}
               </div>
               <div className="flex items-center">
-                <h3>Other Options to be added</h3>
+                {/* <h3>Other Options to be added</h3> */}
 
-                <button
+                {/* <button
                   className={`p-1.5 text-sm font-semibold flex items-center justify-center text-center gap-2  transition rounded m-3 ${
                     copyButtonText === "Copied"
                       ? "bg-green-600"
@@ -149,7 +149,7 @@ const CodeRoom = () => {
                   ) : (
                     <Copy className="size-4" />
                   )}
-                </button>
+                </button> */}
                 <button
                   className={`p-1.5 text-sm font-semibold flex items-center justify-center text-center gap-2  transition rounded m-3 ${
                     copyButtonText === "Copied"
